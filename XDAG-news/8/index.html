@@ -55,7 +55,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="https://xdag.io">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -73,23 +73,23 @@
                     <div class="dropdown-menu" aria-labelledby="Resources">
                         <a class="dropdown-item" href="https://github.com/XDagger/xdag/blob/master/WhitePaper.md" target="_blank">Whitepaper</a>
                         <a class="dropdown-item" href="https://github.com/XDagger/xdag/releases" target="_blank">Releases</a>
-                        <a class="dropdown-item" href="https://xdag.io//index.html#roadmap">Roadmap</a>
+                        <a class="dropdown-item" href="/index.html#roadmap">Roadmap</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="/">News</a>
+                    <a class="nav-link" href="/XDAG-news">News</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="https://xdag.io/technology">Technology</a>
+                    <a class="nav-link" href="/technology">Technology</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="Community" role="button" data-toggle="dropdown" aria-expanded="false">
                         Community
                     </a>
                     <div class="dropdown-menu" aria-labelledby="Community">
-                        <a class="dropdown-item" href="https://xdag.io/rank">Wallet Rank</a>
-                        <a class="dropdown-item" href="https://xdag.io/task">Reward Tasks</a>
-                        <a class="dropdown-item" href="https://xdag.io/hashrate">Hashrate Statistics</a>
+                        <a class="dropdown-item" href="/rank">Wallet Rank</a>
+                        <a class="dropdown-item" href="/task">Reward Tasks</a>
+                        <a class="dropdown-item" href="/hashrate">Hashrate Statistics</a>
                         <a class="dropdown-item" href="https://www.coinex.com/exchange/XDAG-USDT" target="_blank">Exchanges </a>
                     </div>
                 </li>
@@ -120,62 +120,269 @@
                     <div class="img-box">
 
                         
-                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
+                        <img src="/assets/images/posts/v022.png" alt="">
                         
                     </div>
                     <div class="detail-box">
                         <h5>
-                            Xdag  Block Explorer Bounty
+                            XDAG v.0.2.2 Release & Change List
                         </h5>
                         <p>
-                            OVERVIEW
-The first bounty program task is to create a block explorer. The new Dagger community website (xdag.org) will be out soon, and it will include lots of information from the community regarding the Dagger project. The website will need tools in the future to let users explore Dagger, and the first tool is a block explorer.
+                            We are pleased to announce that XDAG v0.2.2 is released.
 
-GOALS &amp; SPECIFICATIONS
-Create a functioning block explorer that contains the following information:
 
-  Current main block height
-  Current network hash difficulty
-  Ideally, an actual 2D visual representation of the DAG tree
-  Total block count
-  Current difficulty
-  Coins in circulation
-  General information by block hash or address, such as:
+  XDag v0.2.2 release
+  Github
+
+
+Change list:
+
+  Transaction address is shown in the console version, you can track the status of your transaction in the block explorer.
+  New field “State” was added to the output of the “block” command. See description below.
+  A bug in DNET which could break synchronization between pools is fixed.
+  A bug in block validation logic which could lead to divergence of balances between pools is fixed.
+  Large changes to mining:
     
-      Timestamp
-      Block children, parents, and path to a main block
-      Block hash for address, or address for hash
-      Block difficulty
-      Transaction details (amount sent to which address)
+      Unpaid shares are paid even if miner is disconnected.
+      Miners who use several rigs with one wallet address recieve only one total payment, not several payments corresponding to the number of connections. It should help to decrease network load.
+      Restriction on count of connections with the same address was added. This count can be configured, see description below.
+      Count of shares per task from one connection was restricted to 20, if count of shares exceeds 20 (during one minute) miner is disconnected. It was made with the purpose to protect pool againnst DDOS and cheating with shares.
+      If you use several connections with the same address you can no longer send the same shares. All shares must be unique.
+      Output of the miners command was changed. See description below.
+      Max count of connections was increased to 8192.
+    
+  
+  Small update in the GUI wallet.
+  Draft version of JSON-RPC. Not ready for exchanges at the moment.
+  Some log messages are disabled during the loading process of the storage. It can help to decrease count of disk I/O operations and speed up the loading of storage folder.
+  DAG takes too much space in memory. Pools use temporary files for swapping in order to decrease memory usage. A new configuration “-z” was added:
+    
+      -z   - you can set path to temp-file folder.
+      -z RAM - use RAM instead of temp-files. It can speed up loading of storage and make the pool faster, but demands large amout of free memory.
     
   
 
 
-It will be an advantage if you create an interpreter for the storage blocks instead of query the wallet sockets API.
+Transaction address:
+After a transfer, you will see this message, “Transaction address is xxxxxxxxxxxxxx, it will take several minutes to complete the transaction.”. Example:
 
-SPECIFICATIONS
-Entrants must release the block explorer as open source code, and shared on Discord for review. All submissions will be accepted and reviewed.
+xdag&gt; xfer 5 EnTkFVTGB+J4oKHHTQIay3Q3Zc1a8s0u
+Password:
+Xfer: transferred 5.000000000 XDAG to the address EnTkFVTGB+J4oKHHTQIay3Q3Zc1a8s0u.
+Transaction address is ksk5SsT5PqLhAwCUhqtBFNPB6WizsDk0, it will take several minutes to complete the transaction.
 
-REWARD
-Three winners will be nominated and receive a reward.
-1st place: 5000 XDAG; 2nd place: 1500 XDAG; 3rd place: 750 XDAG.
+You can use that address to track your transaction, for example: https://explorer.xdag.io/block/ksk5SsT5PqLhAwCUhqtBFNPB6WizsDk0
 
-SUBMIT
-Submit your block explorer through Discord (https://discord.gg/4hAntBw) in the #technical-hq channel. The submission should contain:
+Currently you can use field “Flags” to find out the state of the transaction (block):
+0 - block is just recieved.
+10 - block is in processing.
+1c - block is accepted.
+1F - it is main block.
+18 - block is rejected. It can be caused by insufficient balance or synchronization problems.
 
-  Link to your project
-  A Dagger address
+New version has a new field “state” with the following values:
+
+  Pending
+  Accepted
+  Rejected
+  Main
 
 
-Last submission will be accepted the 10/02/2018 .
+Example:
+xdag&gt; block  gkileoNyIQ+24I82gBKXcsm1wZSKHIVd
+      time: 2018-05-18 01:59:27.916
+ timestamp: 16bf8253fab
+     flags: 0
+     state: Pending
+  file pos: 200
+      hash: 0c93950ebed441c95d851c8a94c1b5c972971280368fe0b60f2172837aa54882
+difficulty: 00000001c7a2f05a0
+   balance: gkileoNyIQ+24I82gBKXcsm1wZSKHIVd           0.000000000
+-------------------------------------------------------------------------------------------
+                               block as transaction: details
+ direction  address                                    amount
+-------------------------------------------------------------------------------------------
+       fee: NjVnGThQVNPsMnMwgRPTJQWvmsBNSCTB           0.000000000
+    output: CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN           0.000000000
+     input: CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN       50000.000000000
+    output: XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp       50000.000000000
+-------------------------------------------------------------------------------------------
+                                 block as address: details
+ direction  transaction                                amount       time
+-------------------------------------------------------------------------------------------
+
+Existing block explorers can use this field to show the block state.
+
+For pool owners: The configuration for pool was updated. A new parameter “maxconn - maximum allowed number of miners with the same address” was added. Also parameters were reordered.
+
+-P ip:port:CFG - run the pool, bind to ip:port, CFG is miners:maxip:maxconn:fee:reward:direct:fund
+                     miners - maximum allowed number of miners,
+                     maxip - maximum allowed number of miners connected from single ip,
+                     maxconn - maximum allowed number of miners with the same address,
+                     fee - pool fee in percent,
+                     reward - reward to miner who got a block in percent,
+                     direct - reward to miners participated in earned block in percent,
+                     fund - community fund fee in percent
+
+
+Example of command line for starting pool (for test net):
+xdag -t -p 213.21.5.18:3366 -P 213.21.5.18:454:1000:100:60:1:1:1:1
+
+
+Output of miners command was changed. Example:
+xdag&gt; miners
+List of miners:
+ NN  Address for payment to            Status   IP and port            in/out bytes      nopaid shares
+------------------------------------------------------------------------------------------------------
+ -1. EacdO89D9vDursfUP4dsPHvHu1mnKdHP  fee      -                      -                 0.000000
+  0. XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp  active   -                      -                 34.238053
+ C1. -                                 -        127.0.0.1:50013        9568/4800         34.238053
+ C2. -                                 -        127.0.0.1:50634        576/96            0.135454
+  1. CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN  active   -                      -                 31.848017
+ C1. -                                 -        127.0.0.1:50024        10944/4640        31.848017
+  2. qJ4ytVsbjyiuDP57XaLo1ia323XeHFS8  archive  -                      -                 13.180378
+------------------------------------------------------------------------------------------------------
+Total 2 active miners.
+
+
+Now all connections with the same address are grouped. Disconnected miners are marked with “archived” state. Archive miners are removed from the list when all shares are paid. In order to see the list in the old format, you can use command “miners conn.”
+
+xdag&gt; miners conn
+List of miners:
+ NN  Address for payment to            Status   IP and port            in/out bytes      nopaid shares
+------------------------------------------------------------------------------------------------------
+  0. XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp  active   127.0.0.1:50013        9600/4800         34.238053
+  1. CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN  active   127.0.0.1:50024        10976/4640        31.848017
+  2. XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp  active   127.0.0.1:50634        576/96            0.135454
+------------------------------------------------------------------------------------------------------
+Total 3 active miners.
+
+
+This list shows only active connections. The new version no longer has “archive connections”.
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-27 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-18 
                             </h6>
                         </div>
-                        <a href="/2018/01/27/XDAG-Block-Explorer-Bounty.html">
+                        <a href="/2018/05/18/XDAG-update.html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/about-mining.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Pool Owners Agreement
+                        </h5>
+                        <p>
+                            The up-to-date version of Pool Owners’ Agreement can be found on our Wiki.
+
+Due to the recent events the following recommendations and decisions have been made by the community and developer team.
+
+Only use pools listed in the whitelist. Even though it’s very restraining in its current state, using only approved pools is vital for the health of the network.
+For now, every submission regarding whitelist addition will be audited. This will continue until the network is fully stable.
+The following requirements have to be fulfilled in order to apply for a pool:
+
+
+  No private pools
+  A public frontend would be appreciated. If you don’t want to add one, please provide at least:
+    
+      Pool status must be exposed in real time (maximum interval time: one minute) by HTTP
+      Pool net conn must be exposed in real time (maximum interval time: one minute) by HTTP
+    
+  
+  Server time zone must be set to UTC time zone
+  Must use ntpdate to synchronize time
+  Must use root or unlimited user (max open files limit set to more then 4096) to start pool process
+  Do not try to change the hardcode of max miners
+  Server configuration with 8-core CPU, 32G RAM, SSD raid0/raid10 and above
+  1Gbit/s Internet Speed and above
+
+
+The contact person of a pool must be added to the Discord poolowner group.
+
+Regarding whitelist additions, please send your requests to: pool@xdag.io. No other ways will be accepted for now.
+
+In your email request, please include this list and fill out everything.
+
+
+  
+    1 Pool IP:
+    2 Pool Configuration:
+      
+        2.1 Pool config:
+        2.2 NTP config:
+        2.3 Timezone config:
+      
+    
+    3 Pool hardware configuration:
+      
+        3.1 CPU:
+        3.2 RAM:
+        3.3 Disk:
+        3.4 Internet bandwidth:
+      
+    
+    4 Pool frontend:
+      
+        4.1 Stats through HTTP:
+        4.2 Net conn through HTTP:
+        4.3 Pool frontend link (optional):
+      
+    
+    5 Pool Owner:
+  
+
+
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-12 
+                            </h6>
+                        </div>
+                        <a href="/2018/05/12/Pool-Owners-Agreement.html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/about-mining.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Pools Are Open With No Fees
+                        </h5>
+                        <p>
+                            Pools are open for mining again as of 15:45 UTC. Per agreement between all the pool owners there are no fees (0%).
+
+100% of the block reward goes to the miners.
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-10 
+                            </h6>
+                        </div>
+                        <a href="/2018/05/10/Pools-are-open-with-no-fees.html">
                             Read More
                         </a>
                     </div>
@@ -192,46 +399,22 @@ Last submission will be accepted the 10/02/2018 .
                     </div>
                     <div class="detail-box">
                         <h5>
-                            Version T13.838 Is In The Linux Repo.
+                            Update On Synchronization
                         </h5>
                         <p>
-                            
-  new hashrate counting system implemented; it is more precise than the existing one;  touched to:
-    
-      hashrate of whole network;
-      hashrate of the node;
-      hashrate of each miner;
-    
-  
-  option ‘-a address’ added; this option allow the miner operate of this specific address instead of default one.
-This option is dedicated to miners who have several addresses.
-    
-      For example, second address incidentally appears after update.
-      Another example: early solo miner with much of addresses. To use this option one need to know the address and have files wallet.dat, dnet_key.dat and the storage directory.
-      Then, run $ xdag -d -m N -a address pool:port
-      To know all addresses one need to run the program without -a option and type the command ‘account 1000’ or with larger number.
-      Then, one can see balances of these addresses in the balance viewer.
-      Note for early solo-miners: loading blocks could take a time, type the ‘state’ command periodically.
-    
-  
-  small fixes:
-    
-      transfer to incorrect address forbidded;
-      problem with rounding of smallest digit of amount fixed;
-      files netdb*.txt updated.
-    
-  
+                            The current status of the network is progressing well. We are going to wait for the few left blocks to finish and verify the integrity of the network.
 
+We have decided not to rollback.
 
-This update recommended for pools on the next planned maintenance. Miners can update if it is necessary.
+More information will be announced later.
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-20 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-10 
                             </h6>
                         </div>
-                        <a href="/2018/01/20/Version-T13.838-is-in-the-Linux-repo/html">
+                        <a href="/2018/05/10/Update-on-Synchronization.html">
                             Read More
                         </a>
                     </div>
@@ -248,36 +431,35 @@ This update recommended for pools on the next planned maintenance. Miners can up
                     </div>
                     <div class="detail-box">
                         <h5>
-                            Update Please Your Netdb White
+                            Report On Desynchronization Of Network
                         </h5>
                         <p>
-                            Pools owner! Update please your netdb-white.txt in the working folder.
+                            Recently there have been some issues regarding the mainnet desynchronization. Last night, several pool owners reported a DDoS attack. The pools in mainland China generated a lot of traffic to the rest of the international pools. Sadly, the Great Firewall of China controls traffic to and from mainland China, and the bandwidth is heavily restricted which resulted in desynchronization issues between mainland Chinese pools and international pools. The issues with slow synchronization of blocks further increased the problems.
 
-Here is current whitelist:
+Temporarily, it has been negotiated with some Chinese pool owners to move their pools outside of mainland China due to firewall restrictions. Pools with mainland Chinese IP addresses have temporarily been removed from the whitelist.
+
+In the future, we are going to investigate and give recommendations of hardware configurations to make sure that pools run optimally. The whitelisted pools will also be audited so that the configuration does not interfere with the network. To do this, we would like all pool owners to keep in contact with the developers and the rest of the community to ensure that everything works smoothly.
+
+In the meanwhile, the development team will start to work on optimizing the network layer to avoid desynchronization issues.
+
+The plan for returning to a stable network is as follows:
+
+  Pools which are in a non-fork status will synchronize for 24 hours.
+  If the pools are in normal operation within 24 hours, the network will slowly expand to allow more pools.
+  If the pools are not synchronized within 24 hours, there is a need for an emergency rollback to a previous state.
 
 
-  52.5.32.68:13655
-  199.16.31.96:3355
-  109.90.229.170:35585
-  45.63.58.16:13654
-  52.232.109.201:13654
-  54.37.158.221:13654
-  172.105.216.53:3356
-  47.93.223.203:13655
-  213.168.251.23:13655
+Pool owners who can be trusted by the community miners and volunteer to do this rollback are advised to contact the development team. There are already several pools that volunteer to do this.
 
-
-The last is new my pool where I am migrating to.
-
-The address for miners will be 213.168.251.23:13654
+In the case of a rollback, if you are affected by a loss of coins, please contact communitymanager@xdag.io. If you lost coins due to a trade, first contact the person you performed the trade with. If you lost coins due to an exchange trade, please contact the specific exchange.
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-14 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-09 
                             </h6>
                         </div>
-                        <a href="/2018/01/14/Update-please-your-netdb-white.html">
+                        <a href="/2018/05/09/Report-on-Desynchronization-of-Network.html">
                             Read More
                         </a>
                     </div>
@@ -294,73 +476,20 @@ The address for miners will be 213.168.251.23:13654
                     </div>
                     <div class="detail-box">
                         <h5>
-                            Feature Of The Next Update Which Coming Soon
+                            Discord Webhook Introduction
                         </h5>
                         <p>
-                            T13.816
+                            We are now using webhooks to automatically get you the latest news from xdag.io.
 
-  work with memory is rewritten. The data is now stored in a file that is mapped to memory. This will help if there is not much memory, and the necessary memory is constantly growing.
-  the new version can be run in parallel with the old one, if you have a powerful server, so as not to interrupt the work of the miners
-  fixed the error with the damage of about half of the hashes. Because of this, it seemed that the complexity of the network was growing. In fact, power was reduced by half because of this error;
-  now the pools can xfer their fees to a wallet, not being afraid to steal money from the miners;
-  you can add pools to the white list without rebooting your pool;
-  you can donate a certain percentage to the community fund. In this case, the option for the pool will be -P ip:port:maxminers:poolfee:reward:direct:maxipminers:donation
-
-
-
-since the last update, some more pool can be added,as dev said,20 will be running for now to test.
-We will collect the ask for whitelisting all this day.
-As watched with dev you can send demand to me via PM, we will need the locations of our pool and at least some spec like bandwitch.
-Answer will be given as soon as we can give, please be patient.
+Everything new in the News section will be available in the #announcements channel on Discord. Hopefully these tools will also allow us to integrate better with other social media services.
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-13 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-02 
                             </h6>
                         </div>
-                        <a href="/2018/01/13/Feature-of-the-next-update-which-coming-soon.html">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mx-auto newsCont">
-                <div class="box">
-                    <div class="img-box">
-
-                        
-                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
-                        
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            New Releases Version T13.811 Avaible On The Main Website
-                        </h5>
-                        <p>
-                            Fixes:
-
-  trouble with another address fixed (already!). If you run the program again you should obtain the same address.
-  some rebranding done:
-    
-      executable renamed to xdag, xdag.exe and xdagwallet.exe
-      prompt is xdag&gt; now
-      currency token is XDAG
-      log file is xdag.log
-    
-  
-
-
-Recommended for miners.pool not concerned
-
-                        </p>
-                        <div class="news_info">
-                            <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-11 
-                            </h6>
-                        </div>
-                        <a href="/2018/01/11/New-releases-version-T13.811-avaible-on-the-main-website.html">
+                        <a href="/2018/05/02/Discord-Webhook-Introduction.html">
                             Read More
                         </a>
                     </div>
@@ -371,7 +500,7 @@ Recommended for miners.pool not concerned
         
         <div class="pagination">
             
-            <a href="/10" class="prev">Previous</a>
+            <a href="/XDAG-news/7" class="prev">Previous</a>
             
 
             <div class="page-numbers">
@@ -381,49 +510,49 @@ Recommended for miners.pool not concerned
                 
                 
                 
-                <a href="/2">2</a>
+                <a href="/XDAG-news/2">2</a>
                 
                 
                 
-                <a href="/3">3</a>
+                <a href="/XDAG-news/3">3</a>
                 
                 
                 
-                <a href="/4">4</a>
+                <a href="/XDAG-news/4">4</a>
                 
                 
                 
-                <a href="/5">5</a>
+                <a href="/XDAG-news/5">5</a>
                 
                 
                 
-                <a href="/6">6</a>
+                <a href="/XDAG-news/6">6</a>
                 
                 
                 
-                <a href="/7">7</a>
+                <a href="/XDAG-news/7">7</a>
                 
                 
                 
-                <a href="/8">8</a>
+                <em>8</em>
                 
                 
                 
-                <a href="/9">9</a>
+                <a href="/XDAG-news/9">9</a>
                 
                 
                 
-                <a href="/10">10</a>
+                <a href="/XDAG-news/10">10</a>
                 
                 
                 
-                <em>11</em>
+                <a href="/XDAG-news/11">11</a>
                 
                 
             </div>
 
             
-            <span>Next</span>
+            <a href="/XDAG-news/9">Next</a>
             
 
         </div>
