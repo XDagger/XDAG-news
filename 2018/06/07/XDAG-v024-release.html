@@ -103,23 +103,94 @@
     <!-- end header section -->
 </div>
 
-<section class="news_section layout_padding">
+
+
+<div class="blog-details-area padding-top-120 padding-bottom-90">
     <div class="s-shape1 "></div>
     <div class="s-shape2"></div>
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest news
-            </h2>
-        </div>
-        <div class="row newTop">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- single-blog-post-item -->
+                <article class="single-blog-list-item mb-30">
+                    <div class="blog-details">
+                        <div class="blog-title mt-20">
+                            <h2>XDAG v0.2.4 Release & Change List</h2>
+                        </div>
+                        <div class="blog-meta border-0 mt-0 pt-1 pb-15">
+                            <span class="mr-0 border-0"><i class="fa fa-calendar"></i> 2018-06-07 </span>
+                        </div>
+                        <div class="blog-content">
+                            <p>We are pleased to announce that XDAG v0.2.4 is released.</p>
 
-            
+<ol>
+  <li><a href="https://github.com/XDagger/xdag/releases/tag/0.2.4">XDag v0.2.4 release</a></li>
+  <li><a href="https://github.com/XDagger/xdag">Github</a></li>
+  <li><a href="https://bitcointalk.org/index.php?topic=2552368.msg39533714#msg39533714">BitcoinTalk</a></li>
+</ol>
+
+<p><strong>Change list:</strong></p>
+<ul>
+  <li>Whitelist is automatically updated from GitHub.</li>
+  <li>Wallet with mining turned off sends only one share per task instead of six.</li>
+  <li>Inactive connections (connections which do not send shares at all) are automatically disconnected after 5 minutes of inactivity.</li>
+  <li>New command <em>disconnect:</em> allows pool-owner to manually disconnect a miner.</li>
+  <li>Main network and test network are protected against accidental merging.</li>
+  <li>Command history and auto-completion for Mac and Linux console wallets has beed added.</li>
+  <li>Bug with payments to miner which was disconnected long time ago is fixed.</li>
+</ul>
+
+<p>Description of <em>disconnect</em> command: this command allows to disconnect some or all connections depending on parameters.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>disconnect all - disconnects all connections
+disconnect ip &lt;IP&gt; - disconnects all connections with specified IP
+disconnect address &lt;ADDRESS&gt; - disconnect all connections with specified address
+</code></pre></div></div>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <aside class="widgets-area">
+
+                    <div class="widget widget-search mb-40">
+                        <h4 class="title">Search Here</h4>
+                        <div class="single-search-inner">
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- widget_categories -->
+                    <div class="widget_categories first">
+
+                        
+                        <div> <h4 class="title">Previos</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div>
+                            <a href="/2018/06/02/update-pool-owners-agreement.html">
+                                Update - Pool Owners' Agreement
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <div class="widget_categories mb-40">
+                        <div><h4 class="title">Next</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div> <a href="/2018/06/27/xdag-presentation.html">XDAG Presentation</a></div>
+                        <div></div>
+                    </div>
+                    
+                </aside>
+            </div>
         </div>
-        
     </div>
-</section>
+</div>
 
+<!-- end news section -->
 
 <section class="info_section ">
 

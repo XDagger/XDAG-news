@@ -103,23 +103,97 @@
     <!-- end header section -->
 </div>
 
-<section class="news_section layout_padding">
+
+
+<div class="blog-details-area padding-top-120 padding-bottom-90">
     <div class="s-shape1 "></div>
     <div class="s-shape2"></div>
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest news
-            </h2>
-        </div>
-        <div class="row newTop">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- single-blog-post-item -->
+                <article class="single-blog-list-item mb-30">
+                    <div class="blog-details">
+                        <div class="blog-title mt-20">
+                            <h2>XDAG v0.2.5 Release</h2>
+                        </div>
+                        <div class="blog-meta border-0 mt-0 pt-1 pb-15">
+                            <span class="mr-0 border-0"><i class="fa fa-calendar"></i> 2018-07-12 </span>
+                        </div>
+                        <div class="blog-content">
+                            <p>We are pleased to announce that XDAG v0.2.5 is released.</p>
 
-            
+<ul>
+  <li><a href="https://github.com/XDagger/xdag/releases/tag/0.2.5">XDAG v0.2.5 release</a></li>
+  <li><a href="https://github.com/XDagger/xdag">Github</a></li>
+  <li><a href="https://bitcointalk.org/index.php?topic=2552368.msg41997908#msg41997908">BitcoinTalk</a></li>
+</ul>
+
+<p><strong>Change list:</strong></p>
+<ol>
+  <li>Increased performance of loading of storage folder and synchronisation between pools (up to 100%).</li>
+  <li>Worker names. Now it is possible to mark your rigs with names and track them. New version of <a href="https://github.com/jonano614/DaggerGpuMiner/releases/tag/0.3.0">Dagger Gpu Miner (v0.3.0)</a> supports that feature.</li>
+  <li>Hashrate for miners is calculated by pool.</li>
+  <li>It is not necessary to specify pool address to start a wallet. You can start executable file without any parameters and wallet will automatically connect to any available pool.</li>
+  <li>CPU-mining is removed from GUI-wallet.</li>
+  <li>Order of transactions returned by <code class="language-plaintext highlighter-rouge">block</code> command is changed. The newest transactions are shown first now</li>
+  <li>New and change pool parameters and command:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">mainblocks N</code> command - returns list of newest main blocks with some additional information</li>
+      <li><code class="language-plaintext highlighter-rouge">minedblocks N</code> command - returns list of last main blocks mined by current pool</li>
+      <li><code class="language-plaintext highlighter-rouge">lastblocks</code> command is marked as obsolete and will be removed in xdag v0.3.1</li>
+      <li><code class="language-plaintext highlighter-rouge">miner &lt;ADDRESS&gt;</code> command - prints detailed information about specified miner</li>
+      <li><code class="language-plaintext highlighter-rouge">-dm</code> startup option - makes it possible to disable mining at all on the current pool. Disables generating new blocks each 64 seconds and pool is not available for connections for miners. This option is necessary for block explorer.</li>
+    </ul>
+  </li>
+  <li>Several small bug-fixes and improvements</li>
+</ol>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <aside class="widgets-area">
+
+                    <div class="widget widget-search mb-40">
+                        <h4 class="title">Search Here</h4>
+                        <div class="single-search-inner">
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- widget_categories -->
+                    <div class="widget_categories first">
+
+                        
+                        <div> <h4 class="title">Previos</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div>
+                            <a href="/2018/06/27/looking-for-contributors.html">
+                                Looking for New Contributors
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <div class="widget_categories mb-40">
+                        <div><h4 class="title">Next</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div> <a href="/2018/07/12/gpu-miner-v030-release.html">XDAG GPU Miner v0.3.0 Release</a></div>
+                        <div></div>
+                    </div>
+                    
+                </aside>
+            </div>
         </div>
-        
     </div>
-</section>
+</div>
 
+<!-- end news section -->
 
 <section class="info_section ">
 

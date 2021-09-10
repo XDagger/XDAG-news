@@ -125,235 +125,149 @@
                     </div>
                     <div class="detail-box">
                         <h5>
-                            XDAG Mars Project
+                            XDAG Community Proposal Apollo
                         </h5>
                         <p>
-                            XDAG Mars Project
-        **to developers who aspire to develop**
+                            The XDAG community has earned a wide impact after more than a year of development, however, pure community-driven open-source cryptocurrency projects like XDAG will encounter more difficulties and challenges than profit-driven projects. At present, the XDAG community has not formed an effective governance mechanism, developers in the community are moving to other proijects, and as such the community’s further development will be challenging. Members of XDAG community have engaged in intense discussions on the future development of the XDAG project.
+
+Through a proposal by community contributor haitao, community enthusiasts Journey, QQ, Next, U54, Feng Qingyang and others, as well as through extensive discussion of community enthusiasts in WeChat groups, a series of proposals to solve the current predicament are formed and named XDAG Apollo plan. Community enthusiast ToBeLeo, Bo Ge, Emiya and community contributor haitao launched a vote on July 11, 2019 on implementation of the plan.
+
+As of the early morning of July 19, 2019, the results of community voting showed that 96.4% of the voters voted for the proposal to implement the XDAG Apollo plan. Thanks to everyone who voted.
+
+The XDAG Apollo plan’s proposal expresses the community’s expectations for the future development of XDAG, and it is necessary to create a practical plan for everyone’s expectations. After discussions with the XDAG community manager Sofar, the community needs to elaborate on the proposed plan and form detailed proposals on both XDAG technology implementation and community governance systems. After the proposal is formed, it will be published and conducted extensive and in-depth discussions and voting, soliciting the final opinions of the majority of XDAG community participants and prioritizing final voting results to implement the plans.
+
+The detailed proposal will be completed within two weeks from now, and then conduct discussion and voting.
+
+Technical discussions are tentatively scheduled on Github, community governance is tentatively discussed in Discord, Telegram, WeChat groups, and QQ groups.
+
+Voting is tentatively scheduled for the WeChat public account and Discord.
+
+If there is a better suggestion, please contact the WeChat public account manager, or proposal in the QQ group, WeChat group and Discord.
+
+The community needs to be able to participate in the refinement and implementation of specific plans and work together to do things!
+
+XDAG Apollo plan
+
+** The original proposal of XDAG Apollo plan **
 
 
-1. Blockground introduction
+  XDAG Apollo plan
 
-XDAG take live in 2017 in the bitcointalk community, and is the first digital cryptocurrency based on DAG that can be mined using the PoW algorithm.
-The XDAG network came go live in January 2018. There are no ICO, no pre-mining. The block reward is halved every four years. The  total volume is around 1.4 billion.
+  Overview
 
-XDAG is currently being continuously developed and maintained by a group of developers who love blockchain and persist in the ideal of decentralization. 
-The goal is to utilize the characteristics 
-of DAG technology to create a high-speed, stable, and flexible blockchain technology that supports multiple main stream applications.
+  The plan will solve the technical problems existing in xdag at present, and then delay the output at economic level, motivate developers, and stimulate the activity of network by measures such as staking mining, then form governance committee, organize communication and development work, study blockchain industry’s latest technology solutions, make technical reserves for the cross-chain, ultra-high-speed irreversible block confirmation.
 
-2.Technical advantages
+  
+    Technical
+  
 
-1) XDAG is the first public chain based on DAG to realize the PoW.
-Combining the high concurrency of DAG with the security and decentralization of POW to solve the “impossible triangle” problem in the blockchain technology;
-2) Block = Transaction = Address.
- This unique design ensures that the transfer process will not lose coins due to typing in the wrong address; #### 3) Low transaction fee and high TPS. XDAG uses unique technology to solve many problems that may exist in the blockchain system, such as double-spending, uncontrollable transaction time, centralization, 34% attacks, and 51% attacks.
+  (1) Improve storage performance by rocksdb on full node (which is expected to solve the problem of low-speed client initiating and the complicated crypto-exchange access)
+(2) Dnet reconstruction with devp2p (which is expected to improve the network stability)
+(3) Improve stability of RPC interface and introduce WebSocket notification mechanism.
+(4) Improve multi-language version xdag (golang, java, etc.) (which is expected to attract more developers)
 
+  
+    Economic
+  
 
-3.From Apollo Plan to Mars Plan
-
-XDAG was highly respected once it was released, but in the first year of development, its own problems gradually exposed, such as the inability 
-of the mining pool to synchronize and other serious problems, which made XDAG unable to continue its original glory.
-On the one hand, mining tyrants relied on the cost advantages of FPGA and ASIC mining machines to “dig and sell”; on the other hand, the originalC code is in the low degree 
-of engineering which makes programmers daunting.
-XDAG entered the “darkest moment”. The low price of the currency and lack of development funds led to the slow development and entered a vicious circle.
-At the critical moment in mid-2019, the XDAG community launched the Apollo Project for exploring a development path suitable for XDAG while ensuring the living space of XDAG.
-Since that time, the XDAG community governance has gradually been on the right track, and XDAG has shown a good development trend. The release of the Java version is now near 
-to complete. The RandomX algorithm upgrade was achieved with a big success, which solves the historical problems of the monopoly reward of mining tyrants and creates a much fair
- environment for participants. 
-The RandomX algorithm allows users with ordinary PCs to participate in the mining process and obtain certain rewards easily, which has greatly increased users’ confidence in XDAG.
-The success of Apollo’s Plan is not only due to the active maintenance of community developers, but also to the trust of all users in the development potential of XDAG.
-The great success of the Apollo project is not only inseparable from the efforts of the XDAG community and fans, but also depends on the era of turbulent cryptocurrency.
- When Bitcoin, Ethereum, etc., have set new highs,and Coinbase landed on Nasdaq, the XDAG community launched the Mars project. The project will take XDAG forward a big step 
- on the basis of the achievements of the Apollo project, and open the way for eventually accommodating mainstream blockchain applications.
-
-4. Outline of XDAG Mars Project
-
-The Mars project is divided into four phases:
-
-1. Exploration phase: XDAGJ testnet is online (online, in beta)
-1) Construction of testnet: build a testnet with multiple mining pools, at least one C version mining pool and one Java version mining pool;
-2) Test coin application: use mining reward distribution, users can mine to obtain test coin; or use issues to apply and distribute regularly;
-3) Testnet access tutorial:complete tutorial of testnet mining, including the construction of miners, how to mine and the detailed introduction of miners’ command line;
-4) Issues submission specification: the submission of bugs should describe detailed issues for quick analysis and resolution;
-5) Blockchain browser: The most intuitive experience for users, you can use the block browser consistent with the official website;
-6) Mining algorithm modification: access to RandomX algorithm;
-7) Libp2p java version is added.
-
-2. Landing phase: XDAGJ mainnet is online
-1) Improve test cases: write test cases for existing functions;
-2) Improve the log function: provide a relatively complete log service to facilitate trouble shooting;
-3) Solve the various small problems of locally loading data, replace the recursive loading method with a loop to avoid stack overflow;
-4) Realize the snapshot function: solve the problem of slow loading speed of the historical main block;
-5) Mining function improvement: Consider replacing existing practices with more mature mining protocols, such as Stratum.
-
-3. Expansion phase: XDAGJ smart contract is online
-1) Use the Ethereum balance model to transform the data structure, remove the address block, and increase the handling fee;
-2) Improve the existing public and private key and address generation methods, use BIPxx and other specifications, use the mnemonic scheme to generate public 
-and private key pairs, and replace the wallet.dat method.
-3) Lightweight wallet application to build metamask RPC compatible with web3;
-4) Implement EVM that supports solidity language and is compatible with Ethereum smart contracts;
-5) Remove whitelist.
-
-4. Prosperity Phase: DAG-DEFI Infrastructure Development
-1) Join the cross-chain scheme, compatible with the access of multiple blockchains, and realize the intercommunication between other chains and XDAG;
-2) Join the oracle;
-3) Join a distributed exchange.
-The Mars project prioritizes the solution of technical issues that the community cares about. During this period, major research breakthroughs can be flexibly 
-added to the development plan.
-
-5. Time estimation
-
+  (1) Output reduction (original 160 years was changed to 1600 years, which is expected to reduce 90% of current output production, the total amount of XDAG coin remains unchanged)
+(2) Reduce output by 10% on the basis of (1) (reduced part of XDAG will be kept for developers, hard-coded by the program, continuously iterative development version)
+(3) Mining Pools stake XDAG (the maximum hash power rate of mining pool is proportional to the number of staking XDAG)
+(4) Miners stake xdag (the amount of hash power which miners can submit is proportional to the number of staking XDAG)
 
   
     
-      1
-      Phase
-      Time(months)
-      Difficulty
-    
-  
-  
-    
-      2
-      Exploration phase
-      1-3
-      Middle
+      Governance
+(1) Elect community governance committee, which is responsible for public communication, planning activities, etc.
+(2) Elect technical governance committee, which is responsible for formulating technical routes, development plans, technical research, etc.
     
     
-      3
-      Landing phase
-      3-6
-      High
+      Research
+(1) Add cross-chain protocol “xdag adapter” adapts to other blockchains (eg Ethereum)
+(2) PoS acceleration confirmation mechanism (based on the original PoW, use PoS to accelerate the confirmation of irreversible blocks, give a certain PoS verification incentive)
     
     
-      4
-      Expansion phase
-      3-6
-      Very High
+      Notes
+Prioritize technical issues, then implement economic plans, major breakthroughs in research during the period can be added to the development plan
     
     
-      5
-      Prosperity phase
-      1-6
-      High
+      Time estimation
+Difficulty is divided into simple, medium, high, super high
     
   
 
+  
+    
+      
+        Serial number
+        Name
+        Time-consuming estimation
+        Difficulty factor
+      
+    
+    
+      
+        1
+        Rocksdb Storage
+        1 - 2 months
+        high
+      
+      
+        2
+        Devp2p Network
+        2-3 months
+        high
+      
+      
+        3
+        RPC Optimization
+        1 month (parallel)
+        medium
+      
+      
+        4
+        Output reduction
+        1 month (parallel)
+        simple
+      
+      
+        5
+        Staking mining
+        2-3 months
+        medium
+      
+      
+        6
+        Java version Xdag development
+        3 - 6 months (parallel)
+        super high
+      
+      
+        7
+        Go version Xdag development
+        3 - 6 months (parallel)
+        super high
+      
+    
+  
 
-6. Donations
-The development of XDAGJ is inseparable from the support of XDAG fans. I hope you will continue to support the development and testing of XDAGJ, and the developer team 
-will return to the society with excellent code.[https://github.com/XDagger/xdagj#sponsorship].
 
-As well you can also fund our main development wallets at this adress :
-XDAG: FQglVQtb60vQv2DOWEUL7yh3smtj7g1s
-BTC: 39QyFnyoW45dWMReaZtcoRHP2S4DqU8xQG
-ETH: 0xb5F34fEb083186AfcB1DB1eFdE41eDA1f9BD9fB1
+** XDAG Apollo Plan PDF Link **
+https://github.com/XDagger/XIPs/files/3390166/ApolloProgram.pdf
 
-7. Bug bounty
-After the XDAGJ testnet went live, in order to encourage community enthusiasts to participate in the construction of XDAGJ, a bug bounty hunter activity was launched. If you
- find a bug, please visit[https://github.com/XDagger/xdagj/issues/new/choose]
-Submit a bug and leave your XDAG address. After we review, we will reward 1000XDAG to this address if a bug is found.
+** XDAG Apollo plan proposal voting QR code **
+https://user-images.githubusercontent.com/1884084/61186456-366f1480-a698-11e9-917a-c8b5d973e4d4.JPG
 
-8. Conclusion
-Currently, XDAG has initially entered a stage of benign development. On the one hand, the Mars project plans the future development path of XDAG, gathers community forces, 
-and promotes the evolution of XDAG to a new height; on the other hand, it uses the world’s number one Java programming language to improve the XDAG ecosystem, attract
- developers to join, and grow with the future king. Finally a prosperous scene of XDAG will be realized. The Mars project will also hold a number of activities to interact 
- with XDAG fans, so stay tuned.
-
--By XDAG Community
+** XDAG Apollo plan proposal voting result **
+https://user-images.githubusercontent.com/1884084/61534243-a6e3b000-aa61-11e9-9582-58d7d066a201.jpeg
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-09 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2019-08-05 
                             </h6>
                         </div>
-                        <a href="/2021/05/09/XDAG-Mars-plan.html">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mx-auto newsCont">
-                <div class="box">
-                    <div class="img-box">
-
-                        
-                        <img src="/assets/images/posts/mmexport1619538583244.jpg" alt="">
-                        
-                    </div>
-                    <div class="detail-box">
-                        <h5>
-                            XDAGJ v0.4.0 Testnet
-                        </h5>
-                        <p>
-                            Hello to all,
-As some of you know, we are currently working on making the project more attractive to developers.
-In order to speed up the extension of the XDAG project as much as possible.
-That’s why we have been promoting the development of the java version lately, and we now have a much healthier testing environment than before.
-We need you to test this test network and the tools that go with it.
-
-After finding a problem with TestNet, users can submit feedback (https://github.com/XDagger/xdagj/issues) and after confirming it as a valid bug, the bug finder will be rewarded with 1000 XDAG.
-
-XDAG Java Edition Testing Tutorial
-
-Full tutorial for testing XDAG Java Edition (Linux, MAC OS, Windows).
-
-(https://github.com/XDagger/xdagj/blob/master/docs/XDAGJ_TestNet_Access_Turial_zh.md )
-Tip: Please use the test network wallet for testing and store the main network wallet separately from the test network wallet to avoid confusion.
-
-I. Test wallet
-
-1. Download the XDAG TestNet Wallet (Windows version)
-(https://github.com/swordlet/win-wallet/releases/tag/0.4.0)
-After downloading and unpacking, run XDagWallet.exe, to distinguish the main network wallet users will have the words “Test Network XDAG Wallet” on the interface (test wallets do not need to modify the configuration, has been automatically set to link the test network).
-
-2. Users can use the test wallet for normal operations such as transferring funds, making notes, history, checking balance, etc. If you find any problems in the process, please provide feedback in time.
-
-3. Test coins can be obtained by mining (after the test wallet is linked to the mining pool, it will also obtain some XDAG).
-
-II. Test mining
-
-1. Download the mining software and unzip the file
-(https://github.com/XDagger/XdagRandomxMiner/releases/download/0.4.1/Release_win_x64_0.4.1.zip)
-
-2. Set the “Locked memory page”
-as required and restart the computer, details: (https://github.com/XDagger/xdagj/blob/master/docs/Win10_Configuration_RandomX_Algorithm_Environment_zh.md)
-
-3. Start the mining command
-DaggerMiner.exe -cpu -T -p  -t  -a 
-Example (please change the address to XDAG personal test address): DaggerMiner.exe -cpu -T -p 1.15.78.91:9992 -t 2 -a +ZPRYegKvBUNi6I+xlxz+U+IP0QzCBkg (Hint: the wallet address of the main network and the test network are not common, please fill in the test network wallet address)
-
-III.Test network blockchain browser
-
-Users can check the address balance, transfer records and other related information through the test network blockchain browser (http://146.56.240.230/).
-
-IV. Reward
-After finding a problem with TestNet, users can submit feedback (https://github.com/XDagger/xdagj/issues) and after confirming it as a valid bug, the bug finder will be rewarded with 1000 XDAG.
-
-V. Community Support
-After more than a year of development work by community contributors, the XDAG Java public beta version has been officially released recently, which is a masterpiece of craftsmanship. In order to attract more developers, we are asking the whole community to help increase the interest in the XDAG Java codebase to raise the buzz and attract more developers!
-
-Method (just lift a finger).
-
-
-  Open the link to (https://github.com/XDagger/xdagj)
-  Click on the “star” button below to follow the XDAG Java code base (requires registration on github).
-
-
-
-
-Thanks to the community for their support!
-
-
-                        </p>
-                        <div class="news_info">
-                            <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-27 
-                            </h6>
-                        </div>
-                        <a href="/2021/04/27/XDAG-Java-Testnet-Tutorial.html">
+                        <a href="/2019/08/05/XDAG-Apollo-plan2.html">
                             Read More
                         </a>
                     </div>
@@ -370,37 +284,49 @@ Thanks to the community for their support!
                     </div>
                     <div class="detail-box">
                         <h5>
-                            XDAG Rebranding result
+                            Monthly report
                         </h5>
                         <p>
-                            Hello everyone
+                            Hello everyone,
 
-Marketing
-The votes are closed since a while, it’s time to unveil what will be the new logo of the XDAG project:
+The time has come to share recent news about what is happening in the XDAG community.
+
+Exchanges
+We’re pleased to announce that XDAG has been listed on Vinex with trading pairs XDAG/BTC and XDAG/USDT.
+
+Remember to trade safely. XDAG is not affiliated with any exchanges.
+
+Coinmarketcap
+We have now reached the requested amount of exchanges to be listed on Coinmarketcap.com, and a request form to be added has been submitted April 3 2019.
+
+Development
+Development is currently focused on storage issues, as well as on switching the main hashing algorithm. XDAG is a community driven project; If you’d like to get involved and work on XDAG issues or features, please visit our GitHub.
+
+Fundraising
+We are fundraising BTC and ETH to pay bounties for XDAG code milestones. The goal is to reach 1 BTC, and currently 0.75 BTC has been raised. If you’d like to donate either XDAG, BTC, or ETH, you can find our fund addresses here.
 
 
+  XDAG: FQglVQtb60vQv2DOWEUL7yh3smtj7g1s
+  BTC:  3Jqe2zEtz3ADXWAqyMzzUysVZjYVnAntXr
+  ETH:  0xb5F34fEb083186AfcB1DB1eFdE41eDA1f9BD9fB1
 
-The refresh of our old logo wins the most votes, we will soon unveil the redesign of our website and our various pages on social networks.
 
-You can download the logos by following this link: https://drive.google.com/drive/folders/1w_Q-eAfGHHwUuEyGAyMIkAx9w92MZ4h3?usp=sharing
+Whitelist cleaning
+We still continue to remove closed pools from our whitelist.
 
-Technical
-A new XDAGJ 0.4.1 release recently, and our devs are still working on adding Libp2p instead of DNET to increase the number of users, and to allow our network to grow as it should.
+As always, please remember to monitor your miners and payouts. If you have not received any mining profits, it might be the case that the pool is defunct. You can check the status of pools at https://xdag.io/pools
+Join us
+As a community driven project, our forces is our users. Don’t hesitate to visit us on Discord or email us at communitymanager@xdag.io to talk about how you could help XDAG.
 
-Randomx has really breathed new life into us by bringing in new miners and customers, which strengthens our network, and our presence, which has been felt on the prices over the last few days.
-We are still a long way from what XDAG can become in the future, but we are really starting to see things more clearly, and developments are now moving at a good pace.
-
-Exchange
-We are still working on getting in touch with new exchanges to get listed, we will come back to you soon with fresh news on this subject.
-
+Thanks to all who have shown support.
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-18 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2019-04-04 
                             </h6>
                         </div>
-                        <a href="/2021/04/18/Rebranding-result.html">
+                        <a href="/2019/04/04/monthly-news.html">
                             Read More
                         </a>
                     </div>
@@ -412,52 +338,94 @@ We are still working on getting in touch with new exchanges to get listed, we wi
                     <div class="img-box">
 
                         
-                        <img src="/assets/images/posts/rebranding.jpg" alt="">
+                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
                         
                     </div>
                     <div class="detail-box">
                         <h5>
-                            XDAG Rebranding
+                            Monthly report
                         </h5>
                         <p>
-                            
-Logo psd created by customscene - www.freepik.com
+                            Hello everyone, the time has come to share some recent news about what is happening in the XDAG community.
 
-XDAG Rebranding
+Meetup
+In Beijing, core developer Frozen held a meeting last week. Here is the transcript of their meeting notes.
 
-As we enter a new phase of development, a member of the community with a certain talent for graphic design has proposed to create a new identity for us as well as a redesign of our publication media (website/social media…).
-That’s why we would like to submit to the vote of the community the new graphic identity to adopt for the future, starting with the logo.
+XDAG Developer Meetup, Beijing Station Activity
 
-There are 6 distinct logos that you can consult in the attached pdf, the first being a rebranding of our current logo, accompanied by 5 other proposals.
+Dear XDAG fans,
 
-For this vote we will again use the wallet system with 1 XDAG = 1 vote, the wallet with the most XDAGs wins.
+A developer meetup of XDAG was held in Beijing on January 12, 2019
 
-Here are the 6 wallet addresses, from 1 to 6 according to the order of the pdf.
+Developers discussed the related matters of XDAG in Beijing . The discussion lasted for more than four hours, the problems encountered by XDAG in the past year and the future development plans were deeply discussed, consensus was formed.
+
+Participants:
+Frozen - XDAG code developer
+Jerry - XDAG code developer
+Larryishere - Mac wallet developer
+Ssyijiu - Android wallet developer
+Wangxuguo - XDAG code developer
+Gui Cai - XDAG development enthusiasts
+
+Topics for discussion:
+Community governance issues
+
+XDAG wallet development and update plan
+
+XDAG communication platform
+
+Current technical problems of XDAG
+
+Consensus:
+2019 Q1, upgrade android wallet to speed up boot time.
+
+2019 Q1, complete the development of Mac wallet, providing a friendly Mac user interface wallet.
+
+Add API of node status query to explorer as soon as possible, provide latest node information
+Clean and reorganize the current node information
+Add synchronization state detection.
+Achieve consensus on basic governance rules for social platforms
+Build XDAG Communication Forum: forum.xdag.io
+Finally, thanks to Gui Cai for providing an arena for this meetup.
+
+The following is photographs of this Meetup in Beijing.
+
+https://drive.google.com/open?id=1jIqqs9Fe2ufEHOHGP4mqvmdHoKoc9a6D
+
+Android 0.2.5 release.
+
+We are pleased to announce version 0.2.5 of XDAG Android wallet is available now!
+
+Change list:
+Bug fixes.
+
+  Update i18n.
+  Update icons
 
 
-  OpWDV70/zKvWPbfDCBvNP+5jJkYMUU58
-  N7qug+TQUUbtMlY+LcZBQZiSpJoqevmL
-  iDbvXS84km4widnAfhcuz/2YzsRRVHeh
-  jwEfsbIUG4rNJ1pCZh+jKCyim4AHoQYv
-  RC2m//hv2mUxx5NfvLkJT1t56w6VTKMY
-  U3AQzfxFb0Zr78XuYaBKvJjV0Oja2MCg
+If you find any new bugs, please submit an issue at: https://github.com/XDagger/android-wallet/issues
 
+XDAG Forum &amp; IRC
 
-Here is the pdf with the different logos : https://drive.google.com/file/d/1ILZepVX-2i7NmamfhH6aYy0X5WWcXmnu/view?usp=sharing
+In our goal to be present on as many social platforms as possible, we have decided to create a forum to interact with each other. You can find the forum at http://forum.xdag.us/
 
-Voting ends on Sunday, Apr 11th 2021.
+You can also find us at IRC: chat.freenode.net #xdag. For more information on how to connect, freenode has a wiki entry detailing how to connect to freenode’s IRC server. .
 
-All funds collected by vote will be donated to the development fund.
-For any donation to the designer, we created a specific task for it, community as well will cover half of the target.
+You can also find the rest of our community’s social platforms on our website.
 
+Whitelist cleaning
+
+Recently, as some pools in the whitelist are defunct and there has been no communication from their owners, we have decided to remove defunct pools from the whitelist in the following weeks. Pools that are no longer functioning will be removed. This ensures that the network will continue to function, and increase activity again with new interested people.
+
+As always, please remember to monitor your miners and payouts. If you have not received any mining profits, it might be the case that the pool is defunct. You can check the status of pools at https://xdag.io/pools
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-07 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2019-01-24 
                             </h6>
                         </div>
-                        <a href="/2021/04/07/Rebranding-vote.html">
+                        <a href="/2019/01/24/Monthly-news.html">
                             Read More
                         </a>
                     </div>
@@ -469,44 +437,58 @@ For any donation to the designer, we created a specific task for it, community a
                     <div class="img-box">
 
                         
-                        <img src="/assets/images/posts/randomXdag.jpg" alt="">
+                        <img src="/assets/images/posts/community-fund-rewards.jpg" alt="">
                         
                     </div>
                     <div class="detail-box">
                         <h5>
-                            XDAG Fork for RandomX deployment
+                            Community fund rewards for December
                         </h5>
                         <p>
-                            
+                            Dear community, the rewards for the month of December 2018 have been decided.
 
-XDAG Fork for RandomX deployment
+The rewards are based on Github contributions and notable community involvement. Transaction IDs are linked to each name.
+The amounts reflect a 0.05$ USD valuation per XDAG, this is to maintain payments and the fund until the market can reflect a stronger price, then we will revert back to market value when this happens.
 
-As warned some days ago, RandomX will go live on our mainnet on main block 1540096 February 22nd 2021, 15:00 UTC .
-There will be no changes or manipulations to be made for the users, only the mining pools are concerned.
-We will come back to you with an update of the wallets shortly.
+For their constant help and daily involvement in the development of XDAG and its core code,
+the following people are rewarded 40000 XDAG (120000 in total):
 
-Mining changes
 
-As you all know, this change of algo was long overdue to counter the big miners who were taking over the network.
-From now on, anyone can mine XDAG, even from his or her desktop computer.
-This opens up a wide field of possibilities for mining, and we hope to convince the mining communities of Monero and Firo to join us to strengthen our network.
+  
+    Frozen
+  
+  
+    Evgeniy
+  
+  
+    Sgaragagghu
+  
 
-Technical
 
-We already have a miner ready for use, there are no major changes other than the algo.
+For the development of a new hashing algorithm for our project, the following person is rewarded 40000 XDAG (40000 in total):
 
-This miner does not require files wallet.dat and dnet_key.dat. Storage folder is still necessary.
 
-You can find it at this adress: https://github.com/XDagger/XdagRandomxMiner/releases/tag/v0.4
+  AnythingTechPro
 
+
+For his constant help and a daily involvement in the development of the project,
+the following person is rewarded 20000 XDAG (20000 in total):
+
+
+  Jimmy
+
+
+Combined total: 180000 XDAG.
+
+Thank you, everyone, for being a part of the community and contributing to XDAG’s progress.
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2021-02-18 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2019-01-10 
                             </h6>
                         </div>
-                        <a href="/2021/02/18/RandomX-Fork.html">
+                        <a href="/2019/01/10/community-fund-rewards-december.html">
                             Read More
                         </a>
                     </div>
@@ -518,35 +500,97 @@ You can find it at this adress: https://github.com/XDagger/XdagRandomxMiner/rele
                     <div class="img-box">
 
                         
-                        <img src="/assets/images/posts/xdaglaptop.jpg" alt="">
+                        <img src="/assets/images/posts/community-fund-rewards-20181208.png" alt="">
                         
                     </div>
                     <div class="detail-box">
                         <h5>
-                            XDAG RandomX Deployement
+                            Community fund rewards for November
                         </h5>
                         <p>
-                            
+                            Dear community, the rewards for the month of November 2018 have been decided.
 
-The community is happy to announce that according to the Apollo program planning, after the developer’s unremitting efforts, the new mining algorithm of XDAG is now ready.
-We’ll release a new version and switch to the new algorithm (RandomX) online in the near future.
-At the same time, the 300,000 XDAGs from the initial crowdfunding will be awarded to the relevant contributors (https://xdag.io/task#community )
+The rewards are based on Github contributions and notable community involvement. Transaction IDs are linked to each name.
+The amounts reflect a 0.05$ USD valuation per XDAG, this is to maintain payments and the fund until the market can reflect a stronger price, then we will revert back to market value when this happens.
 
-The new algorithm will bring the following advantages to the community:
+For their constant help and daily involvement in the development of XDAG and its core code,
+the following people are rewarded 40000 XDAG (120000 in total):
 
-1. The new algorithm will first support CPU mining, which will solve the problem of XDAG mining fairness.
-2. The new algorithm will attract more miners to join as it become easier to mine and the growing team of miners will greatly improve the stability of the XDAG network.
 
-Thank you for the support of the community members, and we wish to all of our Chinese community a happy Chinese New Year and XDAG bullishness!
+  Frozen
+  Evgeniy
+  Sgaragagghu
+
+
+For his constant help and a daily involvement in the development of the project,
+the following person is rewarded 20000 XDAG (20000 in total):
+
+
+  Jimmy
+
+
+For his contributions and fixes applied to the new windows wallet, the following person is rewarded 10000 XDAG (10000 in total):
+
+
+  Toneysui
+
+
+For his contributions to the core code, the following person is rewarded 5000 XDAG (5000 in total):
+
+
+  AnythingTechPro
+
+
+For his contributions to our marketing campaign, the following people is rewarded 5000 XDAG (5000 in total):
+
+
+  One8zero3
+
+
+Combined total: 160000 XDAG.
+
+Thank you, everyone, for being a part of the community and contributing to XDAG’s progress.
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-08 
+                            </h6>
+                        </div>
+                        <a href="/2018/12/08/community-fund-rewards-november.html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/posts/giveaway-winners-2.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Giveaway winners
+                        </h5>
+                        <p>
+                            Congratulations to @ggav_in on Twitter and Sérgio on Facebook.
+
+They will both be sent 5000XDAG and a XDAG t-shirt.
+
+Our last giveaway proved to be a success, with more impressions and engagements than our previous giveaways. Hopefully we will be able to continue doing these with even more reach in the future. Ultimately, we would like to thank all participants and congratulate the winners.
 
 
                         </p>
                         <div class="news_info">
                             <h6 class="news_date">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> 2021-02-11 
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-19 
                             </h6>
                         </div>
-                        <a href="/2021/02/11/RandomX-depoiement.html">
+                        <a href="/2018/11/19/Giveaway-winners.html">
                             Read More
                         </a>
                     </div>
@@ -557,13 +601,13 @@ Thank you for the support of the community members, and we wish to all of our Ch
         
         <div class="pagination">
             
-            <span>Previous</span>
+            <a href="/3" class="prev">Previous</a>
             
 
             <div class="page-numbers">
                 
                 
-                <em>1</em>
+                <a href="/news">1</a>
                 
                 
                 
@@ -575,7 +619,7 @@ Thank you for the support of the community members, and we wish to all of our Ch
                 
                 
                 
-                <a href="/4">4</a>
+                <em>4</em>
                 
                 
                 
@@ -609,7 +653,7 @@ Thank you for the support of the community members, and we wish to all of our Ch
             </div>
 
             
-            <a href="/2">Next</a>
+            <a href="/5">Next</a>
             
 
         </div>

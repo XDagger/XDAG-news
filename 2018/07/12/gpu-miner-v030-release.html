@@ -103,23 +103,87 @@
     <!-- end header section -->
 </div>
 
-<section class="news_section layout_padding">
+
+
+<div class="blog-details-area padding-top-120 padding-bottom-90">
     <div class="s-shape1 "></div>
     <div class="s-shape2"></div>
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest news
-            </h2>
-        </div>
-        <div class="row newTop">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- single-blog-post-item -->
+                <article class="single-blog-list-item mb-30">
+                    <div class="blog-details">
+                        <div class="blog-title mt-20">
+                            <h2>XDAG GPU Miner v0.3.0 Release</h2>
+                        </div>
+                        <div class="blog-meta border-0 mt-0 pt-1 pb-15">
+                            <span class="mr-0 border-0"><i class="fa fa-calendar"></i> 2018-07-12 </span>
+                        </div>
+                        <div class="blog-content">
+                            <p>Our core developer Evgeniy has released an update to his XDAG GPU Miner. It now supports worker names and comes with a Mac OS version! Full change list can be found below.</p>
 
-            
+<ul>
+  <li><a href="https://github.com/jonano614/DaggerGpuMiner/releases/tag/0.3.0">XDAG GPU Miner v0.3.0 release</a></li>
+  <li><a href="https://github.com/jonano614/DaggerGpuMiner">Github</a></li>
+</ul>
+
+<p><strong>Change list:</strong></p>
+<ol>
+  <li>New option <code class="language-plaintext highlighter-rouge">-w &lt;WORKER_NAME&gt;</code> - allows to set names for your rigs. Compatible only with XDAG 0.2.5. Do not use this option with pools version 0.2.4 and lower. Miner will be disconnected.</li>
+  <li>Miner tries to restart GPUs in case of errors.</li>
+  <li>In case of some GPU stopped - miner will not longer constantly print the last known hashrate value.</li>
+  <li>You can configure <code class="language-plaintext highlighter-rouge">-nvidia-fix</code> parameter now: <code class="language-plaintext highlighter-rouge">-nvidia-fix N</code>, N can an integer from 5 to 95. Default value is 90. This parameter is intended to decrease CPU usage on computers with Nvidia GPUs. If the parameter is specified, logic of miner calculates how much time GPU spends on each range of nonces and switches current thread to the sleeping state for some part of the time. Sleeping for 90% of time could cause decresing of hashrate, so now you can configure the parameter yourself. But the less the time of sleeping - the more CPU usage.</li>
+  <li>New parameter <code class="language-plaintext highlighter-rouge">-vectors</code> - enables OpenCL vector operations. On some GPUs it can increase performance, on some - decrease.</li>
+  <li>Version for Mac OS.</li>
+  <li>Optional fee 1%. You can disable fee with option <code class="language-plaintext highlighter-rouge">-no-fee</code>.</li>
+</ol>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <aside class="widgets-area">
+
+                    <div class="widget widget-search mb-40">
+                        <h4 class="title">Search Here</h4>
+                        <div class="single-search-inner">
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- widget_categories -->
+                    <div class="widget_categories first">
+
+                        
+                        <div> <h4 class="title">Previos</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div>
+                            <a href="/2018/07/12/xdag-v025-release.html">
+                                XDAG v0.2.5 Release
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <div class="widget_categories mb-40">
+                        <div><h4 class="title">Next</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div> <a href="/2018/07/30/xdag-wallet-release.html">XDAG Android Wallet Release</a></div>
+                        <div></div>
+                    </div>
+                    
+                </aside>
+            </div>
         </div>
-        
     </div>
-</section>
+</div>
 
+<!-- end news section -->
 
 <section class="info_section ">
 

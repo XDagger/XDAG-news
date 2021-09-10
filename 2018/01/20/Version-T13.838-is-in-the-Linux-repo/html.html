@@ -103,23 +103,99 @@
     <!-- end header section -->
 </div>
 
-<section class="news_section layout_padding">
+
+
+<div class="blog-details-area padding-top-120 padding-bottom-90">
     <div class="s-shape1 "></div>
     <div class="s-shape2"></div>
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest news
-            </h2>
-        </div>
-        <div class="row newTop">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- single-blog-post-item -->
+                <article class="single-blog-list-item mb-30">
+                    <div class="blog-details">
+                        <div class="blog-title mt-20">
+                            <h2>Version T13.838 Is In The Linux Repo.</h2>
+                        </div>
+                        <div class="blog-meta border-0 mt-0 pt-1 pb-15">
+                            <span class="mr-0 border-0"><i class="fa fa-calendar"></i> 2018-01-20 </span>
+                        </div>
+                        <div class="blog-content">
+                            <ol>
+  <li>new hashrate counting system implemented; it is more precise than the existing one;  touched to:
+    <ul>
+      <li>hashrate of whole network;</li>
+      <li>hashrate of the node;</li>
+      <li>hashrate of each miner;</li>
+    </ul>
+  </li>
+  <li>option ‘-a address’ added; this option allow the miner operate of this specific address instead of default one.
+This option is dedicated to miners who have several addresses.
+    <ul>
+      <li>For example, second address incidentally appears after update.</li>
+      <li>Another example: early solo miner with much of addresses. To use this option one need to know the address and have files wallet.dat, dnet_key.dat and the storage directory.</li>
+      <li>Then, run <code class="language-plaintext highlighter-rouge">$ xdag -d -m N -a address pool:port</code></li>
+      <li>To know all addresses one need to run the program without -a option and type the command ‘account 1000’ or with larger number.</li>
+      <li>Then, one can see balances of these addresses in the balance viewer.</li>
+      <li>Note for early solo-miners: loading blocks could take a time, type the ‘state’ command periodically.</li>
+    </ul>
+  </li>
+  <li>small fixes:
+    <ul>
+      <li>transfer to incorrect address forbidded;</li>
+      <li>problem with rounding of smallest digit of amount fixed;</li>
+      <li>files netdb*.txt updated.</li>
+    </ul>
+  </li>
+</ol>
 
-            
+<p>This update recommended for pools on the next planned maintenance. Miners can update if it is necessary.</p>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <aside class="widgets-area">
+
+                    <div class="widget widget-search mb-40">
+                        <h4 class="title">Search Here</h4>
+                        <div class="single-search-inner">
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- widget_categories -->
+                    <div class="widget_categories first">
+
+                        
+                        <div> <h4 class="title">Previos</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div>
+                            <a href="/2018/01/14/Update-please-your-netdb-white.html">
+                                Update Please Your Netdb White
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <div class="widget_categories mb-40">
+                        <div><h4 class="title">Next</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div> <a href="/2018/01/27/XDAG-Block-Explorer-Bounty.html">Xdag  Block Explorer Bounty</a></div>
+                        <div></div>
+                    </div>
+                    
+                </aside>
+            </div>
         </div>
-        
     </div>
-</section>
+</div>
 
+<!-- end news section -->
 
 <section class="info_section ">
 

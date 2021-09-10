@@ -103,23 +103,201 @@
     <!-- end header section -->
 </div>
 
-<section class="news_section layout_padding">
+
+
+<div class="blog-details-area padding-top-120 padding-bottom-90">
     <div class="s-shape1 "></div>
     <div class="s-shape2"></div>
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest news
-            </h2>
-        </div>
-        <div class="row newTop">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- single-blog-post-item -->
+                <article class="single-blog-list-item mb-30">
+                    <div class="blog-details">
+                        <div class="blog-title mt-20">
+                            <h2>XDAG v.0.2.2 Release & Change List</h2>
+                        </div>
+                        <div class="blog-meta border-0 mt-0 pt-1 pb-15">
+                            <span class="mr-0 border-0"><i class="fa fa-calendar"></i> 2018-05-18 </span>
+                        </div>
+                        <div class="blog-content">
+                            <p>We are pleased to announce that XDAG v0.2.2 is released.</p>
 
-            
+<ol>
+  <li><a href="https://github.com/XDagger/xdag/releases/tag/0.2.2">XDag v0.2.2 release</a></li>
+  <li><a href="https://github.com/XDagger/xdag">Github</a></li>
+</ol>
+
+<p><strong>Change list:</strong></p>
+<ul>
+  <li>Transaction address is shown in the console version, you can track the status of your transaction in the block explorer.</li>
+  <li>New field “State” was added to the output of the “block” command. See description below.</li>
+  <li>A bug in DNET which could break synchronization between pools is fixed.</li>
+  <li>A bug in block validation logic which could lead to divergence of balances between pools is fixed.</li>
+  <li>Large changes to mining:
+    <ul>
+      <li>Unpaid shares are paid even if miner is disconnected.</li>
+      <li>Miners who use several rigs with one wallet address recieve only one total payment, not several payments corresponding to the number of connections. It should help to decrease network load.</li>
+      <li>Restriction on count of connections with the same address was added. This count can be configured, see description below.</li>
+      <li>Count of shares per task from one connection was restricted to 20, if count of shares exceeds 20 (during one minute) miner is disconnected. It was made with the purpose to protect pool againnst DDOS and cheating with shares.</li>
+      <li>If you use several connections with the same address you can no longer send the same shares. All shares must be unique.</li>
+      <li>Output of the miners command was changed. See description below.</li>
+      <li>Max count of connections was increased to 8192.</li>
+    </ul>
+  </li>
+  <li>Small update in the GUI wallet.</li>
+  <li>Draft version of JSON-RPC. Not ready for exchanges at the moment.</li>
+  <li>Some log messages are disabled during the loading process of the storage. It can help to decrease count of disk I/O operations and speed up the loading of storage folder.</li>
+  <li>DAG takes too much space in memory. Pools use temporary files for swapping in order to decrease memory usage. A new configuration “-z” was added:
+    <ul>
+      <li>-z <path>  - you can set path to temp-file folder.</path></li>
+      <li>-z RAM - use RAM instead of temp-files. It can speed up loading of storage and make the pool faster, but demands large amout of free memory.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Transaction address:
+After a transfer, you will see this message, “Transaction address is xxxxxxxxxxxxxx, it will take several minutes to complete the transaction.”. Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xdag&gt; xfer 5 EnTkFVTGB+J4oKHHTQIay3Q3Zc1a8s0u
+Password:
+Xfer: transferred 5.000000000 XDAG to the address EnTkFVTGB+J4oKHHTQIay3Q3Zc1a8s0u.
+Transaction address is ksk5SsT5PqLhAwCUhqtBFNPB6WizsDk0, it will take several minutes to complete the transaction.
+</code></pre></div></div>
+<p>You can use that address to track your transaction, for example: https://explorer.xdag.io/block/ksk5SsT5PqLhAwCUhqtBFNPB6WizsDk0</p>
+
+<p>Currently you can use field “Flags” to find out the state of the transaction (block):
+0 - block is just recieved.
+10 - block is in processing.
+1c - block is accepted.
+1F - it is main block.
+18 - block is rejected. It can be caused by insufficient balance or synchronization problems.</p>
+
+<p>New version has a new field “state” with the following values:</p>
+<ul>
+  <li>Pending</li>
+  <li>Accepted</li>
+  <li>Rejected</li>
+  <li>Main</li>
+</ul>
+
+<p>Example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xdag&gt; block  gkileoNyIQ+24I82gBKXcsm1wZSKHIVd
+      time: 2018-05-18 01:59:27.916
+ timestamp: 16bf8253fab
+     flags: 0
+     state: Pending
+  file pos: 200
+      hash: 0c93950ebed441c95d851c8a94c1b5c972971280368fe0b60f2172837aa54882
+difficulty: 00000001c7a2f05a0
+   balance: gkileoNyIQ+24I82gBKXcsm1wZSKHIVd           0.000000000
+-------------------------------------------------------------------------------------------
+                               block as transaction: details
+ direction  address                                    amount
+-------------------------------------------------------------------------------------------
+       fee: NjVnGThQVNPsMnMwgRPTJQWvmsBNSCTB           0.000000000
+    output: CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN           0.000000000
+     input: CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN       50000.000000000
+    output: XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp       50000.000000000
+-------------------------------------------------------------------------------------------
+                                 block as address: details
+ direction  transaction                                amount       time
+-------------------------------------------------------------------------------------------
+</code></pre></div></div>
+<p>Existing block explorers can use this field to show the block state.</p>
+
+<p><strong>For pool owners:</strong> The configuration for pool was updated. A new parameter “maxconn - maximum allowed number of miners with the same address” was added. Also parameters were reordered.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-P ip:port:CFG - run the pool, bind to ip:port, CFG is miners:maxip:maxconn:fee:reward:direct:fund
+                     miners - maximum allowed number of miners,
+                     maxip - maximum allowed number of miners connected from single ip,
+                     maxconn - maximum allowed number of miners with the same address,
+                     fee - pool fee in percent,
+                     reward - reward to miner who got a block in percent,
+                     direct - reward to miners participated in earned block in percent,
+                     fund - community fund fee in percent
+</code></pre></div></div>
+
+<p>Example of command line for starting pool (for test net):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xdag -t -p 213.21.5.18:3366 -P 213.21.5.18:454:1000:100:60:1:1:1:1
+</code></pre></div></div>
+
+<p>Output of miners command was changed. Example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xdag&gt; miners
+List of miners:
+ NN  Address for payment to            Status   IP and port            in/out bytes      nopaid shares
+------------------------------------------------------------------------------------------------------
+ -1. EacdO89D9vDursfUP4dsPHvHu1mnKdHP  fee      -                      -                 0.000000
+  0. XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp  active   -                      -                 34.238053
+ C1. -                                 -        127.0.0.1:50013        9568/4800         34.238053
+ C2. -                                 -        127.0.0.1:50634        576/96            0.135454
+  1. CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN  active   -                      -                 31.848017
+ C1. -                                 -        127.0.0.1:50024        10944/4640        31.848017
+  2. qJ4ytVsbjyiuDP57XaLo1ia323XeHFS8  archive  -                      -                 13.180378
+------------------------------------------------------------------------------------------------------
+Total 2 active miners.
+</code></pre></div></div>
+
+<p>Now all connections with the same address are grouped. Disconnected miners are marked with “archived” state. Archive miners are removed from the list when all shares are paid. In order to see the list in the old format, you can use command “miners conn.”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xdag&gt; miners conn
+List of miners:
+ NN  Address for payment to            Status   IP and port            in/out bytes      nopaid shares
+------------------------------------------------------------------------------------------------------
+  0. XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp  active   127.0.0.1:50013        9600/4800         34.238053
+  1. CtuR8NizlQHSb09T8fV3bURYCEmQ/jcN  active   127.0.0.1:50024        10976/4640        31.848017
+  2. XUSGrE0EHNLZ1OMZqv7pvbBa4YRA+zKp  active   127.0.0.1:50634        576/96            0.135454
+------------------------------------------------------------------------------------------------------
+Total 3 active miners.
+</code></pre></div></div>
+
+<p>This list shows only active connections. The new version no longer has “archive connections”.</p>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <aside class="widgets-area">
+
+                    <div class="widget widget-search mb-40">
+                        <h4 class="title">Search Here</h4>
+                        <div class="single-search-inner">
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- widget_categories -->
+                    <div class="widget_categories first">
+
+                        
+                        <div> <h4 class="title">Previos</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div>
+                            <a href="/2018/05/12/Pool-Owners-Agreement.html">
+                                Pool Owners Agreement
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <div class="widget_categories mb-40">
+                        <div><h4 class="title">Next</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div> <a href="/2018/05/23/XDag-v0.2.3-release.html">XDAG v0.2.3 Release & Change List</a></div>
+                        <div></div>
+                    </div>
+                    
+                </aside>
+            </div>
         </div>
-        
     </div>
-</section>
+</div>
 
+<!-- end news section -->
 
 <section class="info_section ">
 

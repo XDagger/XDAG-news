@@ -103,23 +103,128 @@
     <!-- end header section -->
 </div>
 
-<section class="news_section layout_padding">
+
+
+<div class="blog-details-area padding-top-120 padding-bottom-90">
     <div class="s-shape1 "></div>
     <div class="s-shape2"></div>
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest news
-            </h2>
-        </div>
-        <div class="row newTop">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- single-blog-post-item -->
+                <article class="single-blog-list-item mb-30">
+                    <div class="blog-details">
+                        <div class="blog-title mt-20">
+                            <h2>XDAGJ v0.4.0 Testnet</h2>
+                        </div>
+                        <div class="blog-meta border-0 mt-0 pt-1 pb-15">
+                            <span class="mr-0 border-0"><i class="fa fa-calendar"></i> 2021-04-27 </span>
+                        </div>
+                        <div class="blog-content">
+                            <p>Hello to all,
+As some of you know, we are currently working on making the project more attractive to developers.
+In order to speed up the extension of the XDAG project as much as possible.
+That’s why we have been promoting the development of the java version lately, and we now have a much healthier testing environment than before.
+We need you to test this test network and the tools that go with it.</p>
 
-            
+<p>After finding a problem with TestNet, users can submit feedback (https://github.com/XDagger/xdagj/issues) and after confirming it as a valid bug, the bug finder will be rewarded with 1000 XDAG.</p>
+
+<h1 id="xdag-java-edition-testing-tutorial">XDAG Java Edition Testing Tutorial</h1>
+
+<p>Full tutorial for testing XDAG Java Edition (Linux, MAC OS, Windows).</p>
+
+<p>(https://github.com/XDagger/xdagj/blob/master/docs/XDAGJ_TestNet_Access_Turial_zh.md )
+Tip: Please use the test network wallet for testing and store the main network wallet separately from the test network wallet to avoid confusion.</p>
+
+<h2 id="i-test-wallet">I. Test wallet</h2>
+
+<h3 id="1-download-the-xdag-testnet-wallet-windows-version">1. Download the XDAG TestNet Wallet (Windows version)</h3>
+<p>(https://github.com/swordlet/win-wallet/releases/tag/0.4.0)
+After downloading and unpacking, run XDagWallet.exe, to distinguish the main network wallet users will have the words “Test Network XDAG Wallet” on the interface (test wallets do not need to modify the configuration, has been automatically set to link the test network).</p>
+
+<h3 id="2-users-can-use-the-test-wallet-for-normal-operations-such-as-transferring-funds-making-notes-history-checking-balance-etc-if-you-find-any-problems-in-the-process-please-provide-feedback-in-time">2. Users can use the test wallet for normal operations such as transferring funds, making notes, history, checking balance, etc. If you find any problems in the process, please provide feedback in time.</h3>
+
+<h3 id="3-test-coins-can-be-obtained-by-mining-after-the-test-wallet-is-linked-to-the-mining-pool-it-will-also-obtain-some-xdag">3. Test coins can be obtained by mining (after the test wallet is linked to the mining pool, it will also obtain some XDAG).</h3>
+
+<h2 id="ii-test-mining">II. Test mining</h2>
+
+<h3 id="1-download-the-mining-software-and-unzip-the-file">1. Download the mining software and unzip the file</h3>
+<p>(https://github.com/XDagger/XdagRandomxMiner/releases/download/0.4.1/Release_win_x64_0.4.1.zip)</p>
+
+<h3 id="2-set-the-locked-memory-page">2. Set the “Locked memory page”</h3>
+<p>as required and restart the computer, details: (https://github.com/XDagger/xdagj/blob/master/docs/Win10_Configuration_RandomX_Algorithm_Environment_zh.md)</p>
+
+<h3 id="3-start-the-mining-command">3. Start the mining command</h3>
+<p>DaggerMiner.exe -cpu -T -p <mining pool="" address:port=""> -t <number of="" mining="" threads=""> -a <wallet address="">
+Example (please change the address to XDAG personal test address): DaggerMiner.exe -cpu -T -p 1.15.78.91:9992 -t 2 -a +ZPRYegKvBUNi6I+xlxz+U+IP0QzCBkg (Hint: the wallet address of the main network and the test network are not common, please fill in the test network wallet address)</wallet></number></mining></p>
+
+<h2 id="iiitest-network-blockchain-browser">III.Test network blockchain browser</h2>
+
+<p>Users can check the address balance, transfer records and other related information through the test network blockchain browser (http://146.56.240.230/).</p>
+
+<h2 id="iv-reward">IV. Reward</h2>
+<p>After finding a problem with TestNet, users can submit feedback (https://github.com/XDagger/xdagj/issues) and after confirming it as a valid bug, the bug finder will be rewarded with 1000 XDAG.</p>
+
+<h2 id="v-community-support">V. Community Support</h2>
+<p>After more than a year of development work by community contributors, the XDAG Java public beta version has been officially released recently, which is a masterpiece of craftsmanship. In order to attract more developers, we are asking the whole community to help increase the interest in the XDAG Java codebase to raise the buzz and attract more developers!</p>
+
+<h2 id="method-just-lift-a-finger">Method (just lift a finger).</h2>
+
+<ol>
+  <li>Open the link to (https://github.com/XDagger/xdagj)</li>
+  <li>Click on the “star” button below to follow the XDAG Java code base (requires registration on github).</li>
+</ol>
+
+<p><img src="/assets/images/posts/mmexport1619538583244.jpg" alt="github star" /></p>
+
+<p>Thanks to the community for their support!</p>
+
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <aside class="widgets-area">
+
+                    <div class="widget widget-search mb-40">
+                        <h4 class="title">Search Here</h4>
+                        <div class="single-search-inner">
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- widget_categories -->
+                    <div class="widget_categories first">
+
+                        
+                        <div> <h4 class="title">Previos</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div>
+                            <a href="/2021/04/18/Rebranding-result.html">
+                                XDAG Rebranding result
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <div class="widget_categories mb-40">
+                        <div><h4 class="title">Next</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div> <a href="/2021/05/09/XDAG-Mars-plan.html">XDAG Mars Project</a></div>
+                        <div></div>
+                    </div>
+                    
+                </aside>
+            </div>
         </div>
-        
     </div>
-</section>
+</div>
 
+<!-- end news section -->
 
 <section class="info_section ">
 

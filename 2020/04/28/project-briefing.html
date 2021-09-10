@@ -103,23 +103,176 @@
     <!-- end header section -->
 </div>
 
-<section class="news_section layout_padding">
+
+
+<div class="blog-details-area padding-top-120 padding-bottom-90">
     <div class="s-shape1 "></div>
     <div class="s-shape2"></div>
     <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest news
-            </h2>
-        </div>
-        <div class="row newTop">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- single-blog-post-item -->
+                <article class="single-blog-list-item mb-30">
+                    <div class="blog-details">
+                        <div class="blog-title mt-20">
+                            <h2>XDAG Project Briefing</h2>
+                        </div>
+                        <div class="blog-meta border-0 mt-0 pt-1 pb-15">
+                            <span class="mr-0 border-0"><i class="fa fa-calendar"></i> 2020-04-28 </span>
+                        </div>
+                        <div class="blog-content">
+                            <h2 id="xdag-project-briefing">XDAG Project Briefing</h2>
+<p>Issue 1, 2020</p>
 
-            
+<p>XDAGers, we meet again.</p>
+
+<p>The sudden outbreak of the COVID-19 epidemic in 2020 hit the “pause button” for many economic activities, but the pace of XDAG’s progress was not interrupted. After completing the production cuts, enthusiasts are pressing on with the Apollo program. Recent development has been around the RocksDB storage revamp, with a new version to be released after testing is complete.</p>
+
+<h2 id="rocksdb-version-introduction">RocksDB version introduction</h2>
+
+<h3 id="historical-issues">Historical Issues</h3>
+
+<p>For historical reasons, the node needs to reload data into memory every time it reboots, rebooting the node takes at least 20+ hours (before version 0.3.1, it took about 7 days to reboot), and takes up a lot of memory, hard disk, etc. The problem is a serious constraint on the expansion of community consensus.</p>
+
+<p>In response to this issue, the community has completed development work on the RocksDB version, resolving the reload issue:</p>
+
+<ol>
+  <li>Data will be written into RocksDB from memory;</li>
+  <li>Drastically reduce the memory consumption of the mining pool (about 300M).</li>
+  <li>The full-node wallet (mining pool) reload time is reduced to seconds.</li>
+</ol>
+
+<p><img src="/assets/images/posts/rocks-db-1.jpg" alt="RocksDB" /></p>
+<h3 id="comparison-between-031-and-rocksdb-versions">Comparison between 0.3.1 and RocksDB versions</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Version</th>
+      <th>Data storage</th>
+      <th>Memory consumption</th>
+      <th>Reload time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.3.1</td>
+      <td>Memory</td>
+      <td>50G</td>
+      <td>20 hours</td>
+    </tr>
+    <tr>
+      <td>RocksDB version</td>
+      <td>RocksDB</td>
+      <td>300MB</td>
+      <td>Seconds</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="recent-works">Recent works</h2>
+
+<h3 id="development-work">Development work</h3>
+<p>Completed coding of RocksDB version with heavy workload, now submitted PR (https://github.com/XDagger/xdag/pull/570); Bill and swordlet released new version of Android wallet and PC wallet, with support for transaction note function; discussed and identified new mining algorithm as RandomX.</p>
+
+<h3 id="testing-work">Testing work</h3>
+<p>Bill built the testing framework and did a lot of testing on the RocksDB version, and kbs1 will join the testing work soon.</p>
+
+<h3 id="community-operation">Community operation</h3>
+<p>Co-working with BBX exchange to carry out four activities of XDAG; lunch on QB.COM exchange and start on board activities simultaneously.</p>
+
+<h2 id="follow-up-works">Follow-up works</h2>
+
+<p>Daniel, the founder of XDAG, has vowed to create a fair system of cryptocurrency based on DAG technology, which the community has been aiming for. The core idea of the Apollo program is to complete the implementation of the “equity” feature of XDAG, the community will follow the implementation steps of RocksDB -&gt; modify mining algorithm -&gt; dnet refactoring -&gt; de-whitelist to achieve this goal.</p>
+
+<ol>
+  <li>RocksDB to address reloading issues</li>
+</ol>
+
+<p>See introduction above.</p>
+
+<ol>
+  <li>Mining algorithms to address mining equity issues</li>
+</ol>
+
+<p>The old versions: SHA256D mining algorithm, which has a large number of professional mining machines, has led to a concentration of hash power in the hands of few people, which is far from the “fairness” that the community seeks, the adoption of a fair algorithm is the voice of the entire XDAG community.</p>
+
+<p>New version: using the Random X algorithm, featuring anti-professional mining machines, and optimized specifically for general-purpose CPUs, mining is more decentralized and fairness.</p>
+
+<ol>
+  <li>dnet refactoring</li>
+</ol>
+
+<p>Adopts libuv (underlying technology of node.js) to reconstruct P2P network transmission, ensuring stable and efficient transmission</p>
+
+<p>Older versions: messy dnet code, complex multi-threaded logic.</p>
+
+<p>New version: libuv event loop rebuilds the core P2P network code to ensure stability and reliability while enhancing future scalability.</p>
+
+<ol>
+  <li>Optimize network transmission and remove whitelisting</li>
+</ol>
+
+<p>Older versions: too many bytes transferred over the network, too long synchronization time, severe centralization.</p>
+
+<h3 id="new-version">New version</h3>
+<p>Optimizes the data structure of the network transmission, reduces the network communication bandwidth, and plans to adopt DHT network distributed hash tables, completely removing whitelisting restrictions.</p>
+
+<p><img src="/assets/images/posts/rocks-db-2.jpg" alt="RocksDB 2" /></p>
+
+<p>The XDAG fans are never gone, the pace of progress never stops, and XDAG is destined to continue the road to decentralization and eventually reach the “other side” of fairness…</p>
+
+<p>Thank you to Bill, Swordlet, kbs1, the many contributors who have been quietly contributing, and to you who are following XDAG!</p>
+
+<h2 id="postscript">Postscript</h2>
+
+<p>The year 2020 is an extraordinary one, with the new coronavirus ravaging the world, accumulating about 2 million confirmed cases as of April 15, causing great impact and loss to human society. Humans are also so small in the face of viruses. Here, we pray for the blessings for the world to quickly win this epidemic war!</p>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <aside class="widgets-area">
+
+                    <div class="widget widget-search mb-40">
+                        <h4 class="title">Search Here</h4>
+                        <div class="single-search-inner">
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- widget_categories -->
+                    <div class="widget_categories first">
+
+                        
+                        <div> <h4 class="title">Previos</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div>
+                            <a href="/2020/01/26/Apollo-implementation-stage.html">
+                                XDAG Apollo First Upgrade Announcement
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <div class="widget_categories mb-40">
+                        <div><h4 class="title">Next</h4><i class="fa fa-angle-double-right"></i></div>
+                        <div> <a href="/2020/04/28/xdag-project-briefing.html">XDAG Project Briefing</a></div>
+                        <div></div>
+                    </div>
+                    
+                </aside>
+            </div>
         </div>
-        
     </div>
-</section>
+</div>
 
+<!-- end news section -->
 
 <section class="info_section ">
 

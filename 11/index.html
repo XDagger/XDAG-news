@@ -115,6 +115,317 @@
         <div class="row newTop">
 
             
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Xdag  Block Explorer Bounty
+                        </h5>
+                        <p>
+                            OVERVIEW
+The first bounty program task is to create a block explorer. The new Dagger community website (xdag.org) will be out soon, and it will include lots of information from the community regarding the Dagger project. The website will need tools in the future to let users explore Dagger, and the first tool is a block explorer.
+
+GOALS &amp; SPECIFICATIONS
+Create a functioning block explorer that contains the following information:
+
+  Current main block height
+  Current network hash difficulty
+  Ideally, an actual 2D visual representation of the DAG tree
+  Total block count
+  Current difficulty
+  Coins in circulation
+  General information by block hash or address, such as:
+    
+      Timestamp
+      Block children, parents, and path to a main block
+      Block hash for address, or address for hash
+      Block difficulty
+      Transaction details (amount sent to which address)
+    
+  
+
+
+It will be an advantage if you create an interpreter for the storage blocks instead of query the wallet sockets API.
+
+SPECIFICATIONS
+Entrants must release the block explorer as open source code, and shared on Discord for review. All submissions will be accepted and reviewed.
+
+REWARD
+Three winners will be nominated and receive a reward.
+1st place: 5000 XDAG; 2nd place: 1500 XDAG; 3rd place: 750 XDAG.
+
+SUBMIT
+Submit your block explorer through Discord (https://discord.gg/4hAntBw) in the #technical-hq channel. The submission should contain:
+
+  Link to your project
+  A Dagger address
+
+
+Last submission will be accepted the 10/02/2018 .
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-27 
+                            </h6>
+                        </div>
+                        <a href="/2018/01/27/XDAG-Block-Explorer-Bounty.html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Version T13.838 Is In The Linux Repo.
+                        </h5>
+                        <p>
+                            
+  new hashrate counting system implemented; it is more precise than the existing one;  touched to:
+    
+      hashrate of whole network;
+      hashrate of the node;
+      hashrate of each miner;
+    
+  
+  option ‘-a address’ added; this option allow the miner operate of this specific address instead of default one.
+This option is dedicated to miners who have several addresses.
+    
+      For example, second address incidentally appears after update.
+      Another example: early solo miner with much of addresses. To use this option one need to know the address and have files wallet.dat, dnet_key.dat and the storage directory.
+      Then, run $ xdag -d -m N -a address pool:port
+      To know all addresses one need to run the program without -a option and type the command ‘account 1000’ or with larger number.
+      Then, one can see balances of these addresses in the balance viewer.
+      Note for early solo-miners: loading blocks could take a time, type the ‘state’ command periodically.
+    
+  
+  small fixes:
+    
+      transfer to incorrect address forbidded;
+      problem with rounding of smallest digit of amount fixed;
+      files netdb*.txt updated.
+    
+  
+
+
+This update recommended for pools on the next planned maintenance. Miners can update if it is necessary.
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-20 
+                            </h6>
+                        </div>
+                        <a href="/2018/01/20/Version-T13.838-is-in-the-Linux-repo/html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Update Please Your Netdb White
+                        </h5>
+                        <p>
+                            Pools owner! Update please your netdb-white.txt in the working folder.
+
+Here is current whitelist:
+
+
+  52.5.32.68:13655
+  199.16.31.96:3355
+  109.90.229.170:35585
+  45.63.58.16:13654
+  52.232.109.201:13654
+  54.37.158.221:13654
+  172.105.216.53:3356
+  47.93.223.203:13655
+  213.168.251.23:13655
+
+
+The last is new my pool where I am migrating to.
+
+The address for miners will be 213.168.251.23:13654
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-14 
+                            </h6>
+                        </div>
+                        <a href="/2018/01/14/Update-please-your-netdb-white.html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            Feature Of The Next Update Which Coming Soon
+                        </h5>
+                        <p>
+                            T13.816
+
+  work with memory is rewritten. The data is now stored in a file that is mapped to memory. This will help if there is not much memory, and the necessary memory is constantly growing.
+  the new version can be run in parallel with the old one, if you have a powerful server, so as not to interrupt the work of the miners
+  fixed the error with the damage of about half of the hashes. Because of this, it seemed that the complexity of the network was growing. In fact, power was reduced by half because of this error;
+  now the pools can xfer their fees to a wallet, not being afraid to steal money from the miners;
+  you can add pools to the white list without rebooting your pool;
+  you can donate a certain percentage to the community fund. In this case, the option for the pool will be -P ip:port:maxminers:poolfee:reward:direct:maxipminers:donation
+
+
+
+since the last update, some more pool can be added,as dev said,20 will be running for now to test.
+We will collect the ask for whitelisting all this day.
+As watched with dev you can send demand to me via PM, we will need the locations of our pool and at least some spec like bandwitch.
+Answer will be given as soon as we can give, please be patient.
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-13 
+                            </h6>
+                        </div>
+                        <a href="/2018/01/13/Feature-of-the-next-update-which-coming-soon.html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mx-auto newsCont">
+                <div class="box">
+                    <div class="img-box">
+
+                        
+                        <img src="/assets/images/posts/LOGO-01-2.png" alt="">
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h5>
+                            New Releases Version T13.811 Avaible On The Main Website
+                        </h5>
+                        <p>
+                            Fixes:
+
+  trouble with another address fixed (already!). If you run the program again you should obtain the same address.
+  some rebranding done:
+    
+      executable renamed to xdag, xdag.exe and xdagwallet.exe
+      prompt is xdag&gt; now
+      currency token is XDAG
+      log file is xdag.log
+    
+  
+
+
+Recommended for miners.pool not concerned
+
+                        </p>
+                        <div class="news_info">
+                            <h6 class="news_date">
+                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018-01-11 
+                            </h6>
+                        </div>
+                        <a href="/2018/01/11/New-releases-version-T13.811-avaible-on-the-main-website.html">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="pagination">
+            
+            <a href="/10" class="prev">Previous</a>
+            
+
+            <div class="page-numbers">
+                
+                
+                <a href="/news">1</a>
+                
+                
+                
+                <a href="/2">2</a>
+                
+                
+                
+                <a href="/3">3</a>
+                
+                
+                
+                <a href="/4">4</a>
+                
+                
+                
+                <a href="/5">5</a>
+                
+                
+                
+                <a href="/6">6</a>
+                
+                
+                
+                <a href="/7">7</a>
+                
+                
+                
+                <a href="/8">8</a>
+                
+                
+                
+                <a href="/9">9</a>
+                
+                
+                
+                <a href="/10">10</a>
+                
+                
+                
+                <em>11</em>
+                
+                
+            </div>
+
+            
+            <span>Next</span>
+            
+
         </div>
         
     </div>
